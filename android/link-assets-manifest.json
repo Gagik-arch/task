@@ -1,0 +1,61 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Inter/Inter-Black.ttf",
+      "sha1": "283fa65b96dc1f2d71c6504afb9610447bdcdf1b"
+    },
+    {
+      "path": "src/assets/fonts/Inter/Inter-Bold.ttf",
+      "sha1": "48747b7a60086f97af0d373febcbd1f1bee87f17"
+    },
+    {
+      "path": "src/assets/fonts/Inter/Inter-Light.ttf",
+      "sha1": "dd9ec1ae67dd85143bacf7a3cb37e9f0ac979843"
+    },
+    {
+      "path": "src/assets/fonts/Inter/Inter-Medium.ttf",
+      "sha1": "a418a8ba73bbcfa8c131c426ab836d78457afa9b"
+    },
+    {
+      "path": "src/assets/fonts/Inter/Inter-Regular.ttf",
+      "sha1": "7237d9cf55f177702066a28a4dde1e4c7e8ab576"
+    },
+    {
+      "path": "src/assets/fonts/Inter/Inter-SemiBold.ttf",
+      "sha1": "431007da316de60d85174aeec9b8389b5c73e7d6"
+    },
+    {
+      "path": "src/assets/fonts/Inter/Inter-Thin.ttf",
+      "sha1": "297919d59c9ba4fa17251cdb9f06c26ca906e593"
+    },
+    {
+      "path": "src/assets/icons/eye-off.svg",
+      "sha1": "5654050a83051edc36fe70ee22e918aaa30e6a28"
+    },
+    {
+      "path": "src/assets/icons/eye.svg",
+      "sha1": "5fd7a50d870f414b55c25164bd6d824f1db21f83"
+    },
+    {
+      "path": "src/assets/icons/grid.svg",
+      "sha1": "6e3ec0a32f0df9a77eb71f3a16aace0eb49498b2"
+    },
+    {
+      "path": "src/assets/icons/heart.svg",
+      "sha1": "2a374840fd54875ddf867590e0f2ab0c02871fbe"
+    },
+    {
+      "path": "src/assets/icons/home.svg",
+      "sha1": "90617be61fdc171f1143eaf08f0d25ee41847240"
+    },
+    {
+      "path": "src/assets/icons/index.ts",
+      "sha1": "9cd64dbf2fa23df21c4e80e1b6e5c3e812792d7d"
+    },
+    {
+      "path": "src/assets/icons/user.svg",
+      "sha1": "bd1602967f125f2b5a568f6292a4e15d5cedacfe"
+    }
+  ]
+}

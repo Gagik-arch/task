@@ -14,6 +14,20 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-task-taskTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-task-taskTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		6BA79D67F3B44CBC9B982B6C /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B13CAD77794E2397ABBDB1 /* Inter-Black.ttf */; };
+		A74BF5CEB57F40F49F555E18 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 712D1F27451648469B84C3C3 /* Inter-Bold.ttf */; };
+		1890B87822D24135A04924C5 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BAEE1056E584C86AF1DE066 /* Inter-Light.ttf */; };
+		CE88CBA358D44548A9959E55 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECD5084A12BB4BF6BAFCF114 /* Inter-Medium.ttf */; };
+		FAECEF18FE3947D5AAD4399E /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE055B7EF7364F929C1D0C51 /* Inter-Regular.ttf */; };
+		9B17476E10B849309F4B63FA /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D743CB8649D4B9888EC2773 /* Inter-SemiBold.ttf */; };
+		FCDAF1745023436F82F06AB6 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12C24A9F5C6A48FDBFA4B40D /* Inter-Thin.ttf */; };
+		6037AC88E3F4435FAC85419F /* eye-off.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4868A107B3444BFDB14569B5 /* eye-off.svg */; };
+		3542D78F484E4FA38AF39B54 /* eye.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4F11FF5895624A38B89FCC80 /* eye.svg */; };
+		64813106E3C4451988D9878F /* grid.svg in Resources */ = {isa = PBXBuildFile; fileRef = F3F76B001CA74C599212C4C9 /* grid.svg */; };
+		2F6D3502F60F47F08826CEEC /* heart.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1E9CBC3C12FA4F0D8EB6B398 /* heart.svg */; };
+		C6E7606A97DB48D9AC73D700 /* home.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6C10EF88B3EF44FA90A42CC7 /* home.svg */; };
+		F544B3FF83D145F7AF88952D /* index.ts in Resources */ = {isa = PBXBuildFile; fileRef = 0A293CFA22B14907BCE1D6F2 /* index.ts */; };
+		F2412E1450E74DBAB50063D6 /* user.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3323B162B0E74DA7AC9F3C9D /* user.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +58,20 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = task/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-task-taskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-task-taskTests.release.xcconfig"; path = "Target Support Files/Pods-task-taskTests/Pods-task-taskTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		D3B13CAD77794E2397ABBDB1 /* Inter-Black.ttf */ = {isa = PBXFileReference; name = "Inter-Black.ttf"; path = "../src/assets/fonts/Inter/Inter-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		712D1F27451648469B84C3C3 /* Inter-Bold.ttf */ = {isa = PBXFileReference; name = "Inter-Bold.ttf"; path = "../src/assets/fonts/Inter/Inter-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6BAEE1056E584C86AF1DE066 /* Inter-Light.ttf */ = {isa = PBXFileReference; name = "Inter-Light.ttf"; path = "../src/assets/fonts/Inter/Inter-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ECD5084A12BB4BF6BAFCF114 /* Inter-Medium.ttf */ = {isa = PBXFileReference; name = "Inter-Medium.ttf"; path = "../src/assets/fonts/Inter/Inter-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BE055B7EF7364F929C1D0C51 /* Inter-Regular.ttf */ = {isa = PBXFileReference; name = "Inter-Regular.ttf"; path = "../src/assets/fonts/Inter/Inter-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4D743CB8649D4B9888EC2773 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; name = "Inter-SemiBold.ttf"; path = "../src/assets/fonts/Inter/Inter-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		12C24A9F5C6A48FDBFA4B40D /* Inter-Thin.ttf */ = {isa = PBXFileReference; name = "Inter-Thin.ttf"; path = "../src/assets/fonts/Inter/Inter-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4868A107B3444BFDB14569B5 /* eye-off.svg */ = {isa = PBXFileReference; name = "eye-off.svg"; path = "../src/assets/icons/eye-off.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4F11FF5895624A38B89FCC80 /* eye.svg */ = {isa = PBXFileReference; name = "eye.svg"; path = "../src/assets/icons/eye.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F3F76B001CA74C599212C4C9 /* grid.svg */ = {isa = PBXFileReference; name = "grid.svg"; path = "../src/assets/icons/grid.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1E9CBC3C12FA4F0D8EB6B398 /* heart.svg */ = {isa = PBXFileReference; name = "heart.svg"; path = "../src/assets/icons/heart.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6C10EF88B3EF44FA90A42CC7 /* home.svg */ = {isa = PBXFileReference; name = "home.svg"; path = "../src/assets/icons/home.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0A293CFA22B14907BCE1D6F2 /* index.ts */ = {isa = PBXFileReference; name = "index.ts"; path = "../src/assets/icons/index.ts"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3323B162B0E74DA7AC9F3C9D /* user.svg */ = {isa = PBXFileReference; name = "user.svg"; path = "../src/assets/icons/user.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +150,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				6FDC71E36D1C4A4AA739E500 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +176,28 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		6FDC71E36D1C4A4AA739E500 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				D3B13CAD77794E2397ABBDB1 /* Inter-Black.ttf */,
+				712D1F27451648469B84C3C3 /* Inter-Bold.ttf */,
+				6BAEE1056E584C86AF1DE066 /* Inter-Light.ttf */,
+				ECD5084A12BB4BF6BAFCF114 /* Inter-Medium.ttf */,
+				BE055B7EF7364F929C1D0C51 /* Inter-Regular.ttf */,
+				4D743CB8649D4B9888EC2773 /* Inter-SemiBold.ttf */,
+				12C24A9F5C6A48FDBFA4B40D /* Inter-Thin.ttf */,
+				4868A107B3444BFDB14569B5 /* eye-off.svg */,
+				4F11FF5895624A38B89FCC80 /* eye.svg */,
+				F3F76B001CA74C599212C4C9 /* grid.svg */,
+				1E9CBC3C12FA4F0D8EB6B398 /* heart.svg */,
+				6C10EF88B3EF44FA90A42CC7 /* home.svg */,
+				0A293CFA22B14907BCE1D6F2 /* index.ts */,
+				3323B162B0E74DA7AC9F3C9D /* user.svg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -243,6 +294,20 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				6BA79D67F3B44CBC9B982B6C /* Inter-Black.ttf in Resources */,
+				A74BF5CEB57F40F49F555E18 /* Inter-Bold.ttf in Resources */,
+				1890B87822D24135A04924C5 /* Inter-Light.ttf in Resources */,
+				CE88CBA358D44548A9959E55 /* Inter-Medium.ttf in Resources */,
+				FAECEF18FE3947D5AAD4399E /* Inter-Regular.ttf in Resources */,
+				9B17476E10B849309F4B63FA /* Inter-SemiBold.ttf in Resources */,
+				FCDAF1745023436F82F06AB6 /* Inter-Thin.ttf in Resources */,
+				6037AC88E3F4435FAC85419F /* eye-off.svg in Resources */,
+				3542D78F484E4FA38AF39B54 /* eye.svg in Resources */,
+				64813106E3C4451988D9878F /* grid.svg in Resources */,
+				2F6D3502F60F47F08826CEEC /* heart.svg in Resources */,
+				C6E7606A97DB48D9AC73D700 /* home.svg in Resources */,
+				F544B3FF83D145F7AF88952D /* index.ts in Resources */,
+				F2412E1450E74DBAB50063D6 /* user.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
