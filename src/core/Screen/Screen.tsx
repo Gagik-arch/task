@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import {
-  KeyboardAvoidingView,
+  KeyboardAvoidingView, Platform,
   ScrollView,
   View,
 } from 'react-native';

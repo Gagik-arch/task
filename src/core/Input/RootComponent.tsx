@@ -47,6 +47,7 @@ const RootComponent = React.forwardRef<ReactNode,RootComponentProps>(
             style={[styles.input, inputStyles,{
               color:isValid ? Colors.lightGray : Colors.red,
             }]}
+            selectTextOnFocus={true}
             {...props}
           />
         </View>
@@ -56,7 +57,10 @@ const RootComponent = React.forwardRef<ReactNode,RootComponentProps>(
           <TouchableOpacity
             onPress={() => setVisibility(!visibility)}
           >
-            <Icon name={visibility ? 'EyeOff' : 'Eye'} strokeColor={Colors.darkGray} size={22} />
+            <Icon name={visibility ? 'Eye' : 'EyeOff'}
+                  strokeColor={( !isValid && value.length > 0)
+                    ? Colors.red : undefined }
+                  size={22} />
           </TouchableOpacity>
         ) : null}
       </View>

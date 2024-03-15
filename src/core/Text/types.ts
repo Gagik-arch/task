@@ -4,6 +4,6 @@ import  Fonts  from '@resources/fonts';
 export type TextProps = {
   style?: TextStyle | TextStyle[];
   size?: keyof typeof Fonts;
-  children:string;
+  children:string | number | string[] ;
   numberOfLines?:number;
 };

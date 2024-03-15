@@ -1,13 +1,16 @@
 import { type TextStyle, type ViewStyle } from 'react-native';
-import  Fonts  from '@resources/fonts';
+import Fonts from '@resources/fonts';
+import { ReactNode } from 'react';
 
 export type ButtonProps = {
   label?: string;
   style?: ViewStyle;
   textStyle?: TextStyle;
-  textSize?:  keyof typeof Fonts;
-  variant?: 'primary' | 'secondary' ;
+  textSize?: keyof typeof Fonts;
+  variant?: 'primary' | 'secondary';
   isLoading?: boolean;
-  children?: string | string[];
+  children?: ReactNode | ReactNode[];
   disabled?: boolean;
+  onPress: () => void;
+  onDisable?: () => void;
 };

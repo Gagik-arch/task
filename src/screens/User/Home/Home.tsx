@@ -1,13 +1,18 @@
 import { ReactElement } from 'react';
-import { View } from 'react-native';
-import Text from '@core/Text';
+import Banner from '@components/Banner';
+import productStore from '@store/product';
+import HomeContainer from '@containers/HomeContainer';
+import Screen from '@core/Screen';
 
 const Home = (): ReactElement => {
-  return (
-    <View>
-      <Text>Home</Text>
-    </View>
-  );
+
+    return (
+      <Screen>
+          <Banner />
+          <HomeContainer productStore={productStore} />
+      </Screen>
+    );
 };
+
 
 export default Home;

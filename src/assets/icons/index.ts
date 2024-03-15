@@ -4,6 +4,7 @@ import Grid from './grid.svg';
 import Heart from './heart.svg';
 import User from './user.svg';
 import Home from './home.svg';
+import ChevronLeft from './chevron-left.svg';
 
 export {
   EyeOff,
@@ -12,4 +13,5 @@ export {
   Heart,
   User,
   Home,
+  ChevronLeft,
 };

@@ -6,6 +6,7 @@ enum Routes {
   MyProfile = 'My Profile',
   Wishlist = 'Wishlist',
   Tabs = 'Tabs',
+  Category = 'Category'
 }
 
 export default Routes;

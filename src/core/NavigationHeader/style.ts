@@ -21,7 +21,7 @@ const styles = StyleSheet.create<{
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    flex: 1,
+    flex: 2,
     zIndex: -1,
   },
   title: {

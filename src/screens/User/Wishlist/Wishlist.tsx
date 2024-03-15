@@ -1,12 +1,14 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { View } from 'react-native';
 import Text from '@core/Text';
+import NavigationHeader from '@core/NavigationHeader';
+import Screen from '@core/Screen';
 
 const Wishlist = (): ReactElement => {
   return (
-    <View>
+    <Screen header={<NavigationHeader/>}>
       <Text>Wishlist</Text>
-    </View>
+    </Screen>
   );
 };
 

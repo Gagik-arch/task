@@ -4,10 +4,10 @@ const Regex:Regexp = {
   //min 8 character, 1 number, 1 UPPERCASE, 1 lowercase, 1 special character
   password: {
     validation: new RegExp(
-      '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$',
+      '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d@$!%*?&]{6,}$',
     ),
     errorMessage:
-      'Password must be at least 8 characters long, contains 1 UPPERCASE 1 lowercase 1 special charecter.',
+      'Password must be at least 6 characters long, contains 1 UPPERCASE 1 lowercase 1.',
   },
   // @, 0 UPPERCASE, only com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)
   email: {
