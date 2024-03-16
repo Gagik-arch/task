@@ -47,6 +47,7 @@ const RootComponent = React.forwardRef<ReactNode,RootComponentProps>(
             style={[styles.input, inputStyles,{
               color:isValid ? Colors.lightGray : Colors.red,
             }]}
+            placeholderTextColor={props.placeholderTextColor || Colors.lightGray}
             selectTextOnFocus={true}
             {...props}
           />
