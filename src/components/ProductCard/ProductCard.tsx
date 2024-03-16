@@ -22,7 +22,7 @@ const ProductCard = ({
         onPress={onPress}
       >
           <Image
-            uri={product.thumbnail}
+            uri={product.thumbnail || 'https://odoo-community.org/web/image/product.product/19823/image_1024/Default%20Product%20Images?unique=d50cedd'}
             style={{
                 width: '100%',
                 height: 180,

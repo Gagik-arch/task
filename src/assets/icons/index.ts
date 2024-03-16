@@ -5,6 +5,8 @@ import Heart from './heart.svg';
 import User from './user.svg';
 import Home from './home.svg';
 import ChevronLeft from './chevron-left.svg';
+import Package from './package.svg';
+import Search from './search.svg';
 
 export {
   EyeOff,
@@ -14,4 +16,6 @@ export {
   User,
   Home,
   ChevronLeft,
+  Package,
+  Search,
 };

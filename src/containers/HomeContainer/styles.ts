@@ -4,6 +4,7 @@ import Edges from '@resources/edges';
 const styles = StyleSheet.create<{ [key: string]: ViewStyle | TextStyle }>({
     root: {
         ...Edges.padding(12),
+        flex:1,
     },
     cards: {
         ...Edges.margin(10, 0),

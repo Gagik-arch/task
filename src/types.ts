@@ -31,8 +31,8 @@ export type User = {
 export type Product = {
     brand: string
     category: string
-    description: string
-    discountPercentage: number
+    description?: string
+    discountPercentage?: number
     id: number
     images: string[]
     price: number
@@ -40,6 +40,7 @@ export type Product = {
     stock: number
     thumbnail: string
     title: string
+
 }
 
 export type HomeProducts = {
@@ -51,6 +52,8 @@ export type ProductStore = {
     isLoading: boolean
     wishList: string[]
     homeProducts: HomeProducts[]
+    allProducts:Product[]
+    countInDB:number
 }
 
 export type UserStore = {

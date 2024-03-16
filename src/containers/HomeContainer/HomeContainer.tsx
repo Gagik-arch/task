@@ -1,5 +1,5 @@
 import { ReactElement, useEffect } from 'react';
-import { FlatList, View, ActivityIndicator,Dimensions } from 'react-native';
+import { FlatList, View, ActivityIndicator, Dimensions } from 'react-native';
 import Text from '@core/Text';
 import styles from './styles';
 import { HomeProducts, Product, ProductStore } from '@types';
@@ -12,8 +12,9 @@ import Edges from '@resources/edges.ts';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../store/';
 import { addWishList, getAllProjects } from '../../store/asyncThunks/products.ts';
+import Banner from '@components/Banner';
 
-const {height } = Dimensions.get('screen');
+const { height } = Dimensions.get('screen');
 const HomeContaner = (): ReactElement => {
     const navigation = useNavigation();
     const productStore = useSelector((state: { product: ProductStore }) => state.product);
@@ -21,17 +22,15 @@ const HomeContaner = (): ReactElement => {
 
     useEffect(() => {
         dispatch(getAllProjects());
-    }, []);
-
+    }, [dispatch]);
     if (productStore.isLoading) {
         return (
-          <ActivityIndicator color={Colors.purple} />
+          <ActivityIndicator color={Colors.purple} style={{marginTop:20}} />
         );
     }
     return (
       <View style={styles.root}>
           <FlatList
-            style={{height:height - 300}}
             data={productStore.homeProducts}
             nestedScrollEnabled={true}
             renderItem={({ item: category }: { item: HomeProducts }) => {
@@ -62,6 +61,9 @@ const HomeContaner = (): ReactElement => {
                                   <ProductCard
                                     product={item}
                                     isInWishList={productStore.wishList.includes(`${item.category}/${item.id}`)}
+                                    onPress={() => {
+                                        navigation.navigate(Routes.Product, item);
+                                    }}
                                     onPressHeart={() => {
                                         dispatch(addWishList(`${item.category}/${item.id}`));
                                     }} />

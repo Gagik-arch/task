@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import Input from '@core/Input';
 import Screen from '@core/Screen';
 import styles from './styles';
-import { BodyType, ChangeEventType, RequiredMessageType } from '@types';
+import { BodyType, ChangeEventType, RequiredMessageType, UserStore } from '@types';
 import { onChangeBody, onRequiredFieldNotAvailable, validateFields } from '@resources/utils.ts';
 import Image from '../../core/Image';
 import { formQuery } from './enums.ts';
@@ -17,12 +17,14 @@ import { useSelector } from 'react-redux';
 const Login = (): ReactElement => {
     const dispatch = useAppDispatch();
     const navigation = useNavigation();
-    const userStore = useSelector((state) => state.user);
+    const userStore = useSelector((state: { user: UserStore }) => state.user);
 
-    const [body, setBody] = useState<BodyType>({
-        username: 'kminchelle',
-        password: '0lelplR',
-    });
+    const [body, setBody] = useState<BodyType>({});
+    //   {
+    //     username: 'kminchelle',
+    //     password: '0lelplR'
+    // }
+
 
     const [requiredMessage, setRequiredMessage] = useState<RequiredMessageType>({});
 
@@ -33,20 +35,23 @@ const Login = (): ReactElement => {
             delete copyBody[e.name];
         }
         setRequiredMessage(copyBody);
-        onChangeBody(e, body, setBody);
+        if (body) {
+            onChangeBody(e, body, setBody);
+        }
     };
 
     const disableSubmitBtn: boolean = useMemo(() => {
         return validateFields(Object.values(formQuery), body) || userStore.isLoading;
     }, [body, userStore.isLoading]);
 
-
     const onDisable = () => {
         const result: { [key: string]: string } = {};
+        if (body) {
+            onRequiredFieldNotAvailable(Object.values(formQuery), body, (item: string) => {
+                result[item] = `${item[0].toUpperCase() + item.slice(1)} is required`;
+            });
+        }
 
-        onRequiredFieldNotAvailable(Object.values(formQuery), body, (item: string) => {
-            result[item] = `${item[0].toUpperCase() + item.slice(1)} is required`;
-        });
         setRequiredMessage(result);
     };
 

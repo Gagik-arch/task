@@ -1,5 +1,5 @@
 import React, {
-    ReactElement,
+    type ReactElement,
     useEffect,
     useLayoutEffect,
     useState,
@@ -10,14 +10,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import NetInfo, {
     type NetInfoState,
-    NetInfoSubscription,
+    type NetInfoSubscription,
 } from '@react-native-community/netinfo';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Routes from '@resources/routes.ts';
 import TabNavigation from './TabNavigation';
 import Category from '@screens/User/Category';
 import { useAppDispatch } from '../store';
-import { addWishList, getAllProjects, updateWishList } from '../store/asyncThunks/products';
+import { getAllProjects, updateWishList } from '../store/asyncThunks/products';
+import ProductScreen from '@screens/User/ProductScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -82,6 +83,11 @@ const StackNavigator = (): ReactElement => {
               <Stack.Screen
                 name={Routes.Category}
                 component={Category}
+                options={{ header: () => null }}
+              />
+              <Stack.Screen
+                name={Routes.Product}
+                component={ProductScreen}
                 options={{ header: () => null }}
               />
           </Stack.Group>

@@ -19,7 +19,7 @@ const Image = ({ uri, style = {} }: ImageType): ReactElement => {
           setSize({ width, height });
         },
         (e) => {
-          console.log(e);
+          // console.log(e);
         });
     }
   }, []);

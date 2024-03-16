@@ -1,4 +1,3 @@
-import { Colors, Edges } from '@resources/index';
 import {
     StyleSheet,
     type ViewStyle,
@@ -10,7 +9,7 @@ const styles = StyleSheet.create<{
     [key: string]: ViewStyle | TextStyle | ImageStyle;
 }>({
     root: {
-        height: 200,
+        height: 160,
     },
     pagerView: {
         flex: 1,

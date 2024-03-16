@@ -9,6 +9,7 @@ import {
   type BottomTabBarProps,
 } from '@react-navigation/bottom-tabs';
 import Routes from '@resources/routes.ts';
+import ProductList from '@screens/User/ProductList';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,6 +21,7 @@ const TabsNavigator = () => {
     >
       <Tab.Screen name={Routes.Home} component={Home} />
       <Tab.Screen name={Routes.Categories} component={Categories} />
+      <Tab.Screen name={Routes.ProductList} component={ProductList} />
       <Tab.Screen name={Routes.Wishlist} component={Wishlist} />
       <Tab.Screen name={Routes.MyProfile} component={MyProfile} />
     </Tab.Navigator>

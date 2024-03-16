@@ -12,7 +12,7 @@ const Category = (): ReactElement => {
     return (
       <Screen header={<NavigationHeader backHandler={true}
                                         title={<Text numberOfLines={1}
-                                                     size={'20_600'}>{(route.params.category)[0].toUpperCase() + route.params.category.slice(1)}</Text>}
+                                                     size={'20_600'}>{(route.params?.category)[0].toUpperCase() + route.params?.category.slice(1)}</Text>}
       />}
               contentContainerStyle={{ ...Edges.padding(12) }}
       >

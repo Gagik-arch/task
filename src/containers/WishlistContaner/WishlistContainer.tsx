@@ -34,6 +34,9 @@ const WishlistContainer = (): ReactElement => {
                 if (prod) {
                     return (
                       <ProductCard
+                             onPress={()=>{
+                        navigation.navigate(Routes.Product,prod);
+                    }}
                         product={prod}
                         isInWishList={productStore.wishList.includes(`${prod.category}/${prod.id}`)}
                         onPressHeart={() => {
@@ -56,7 +59,7 @@ const WishlistContainer = (): ReactElement => {
           {/*        numColumns={2}*/}
           {/*        contentContainerStyle={{ columnGap: 20 }}*/}
           {/*        scrollEnabled={false}*/}
-          {/*        renderItem={({ item }: { item: Product }) => {*/}
+          {/*        renderItem={({ item }: { item: ProductScreen }) => {*/}
           {/*            if (!productStore.wishList.includes(`${item.category}/${item.id}`)) {*/}
           {/*                return null;*/}
           {/*            }*/}
@@ -73,7 +76,7 @@ const WishlistContainer = (): ReactElement => {
           {/*        columnWrapperStyle={{*/}
           {/*            justifyContent: 'space-between'*/}
           {/*        }}*/}
-          {/*        keyExtractor={(item: Product) => `${item.category}/${item.id}`}*/}
+          {/*        keyExtractor={(item: ProductScreen) => `${item.category}/${item.id}`}*/}
           {/*      />*/}
           {/*    );*/}
           {/*}*/}

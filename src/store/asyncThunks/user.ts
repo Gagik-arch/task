@@ -33,10 +33,9 @@ export const login: AsyncThunk<void, { body: BodyType; navigate: () => void }, a
   }
 );
 
-
-export const logout: AsyncThunk<void, {  navigate: () => void }, any> = createAsyncThunk(
+export const logout: AsyncThunk<void, () => void, any> = createAsyncThunk(
   'user/logout',
-  async (  navigate: () => void , { dispatch }) => {
+  async (navigate: () => void, { dispatch }) => {
       dispatch(userActions.setLoading(true));
 
       AsyncStorage.clear()
@@ -45,7 +44,6 @@ export const logout: AsyncThunk<void, {  navigate: () => void }, any> = createAs
             navigate();
         })
         .catch((e: string) => {
-            console.log(e);
             Toast.show({
                 type: 'error',
                 text1: 'Something went wrong <Logout> ' + e,

@@ -28,6 +28,8 @@ const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
             break;
           case Routes.MyProfile:
             icon = 'User';
+          case Routes.ProductList:
+            icon = 'Package';
             break;
           default:
             break;

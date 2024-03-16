@@ -11,7 +11,6 @@ export const getAllProjects: AsyncThunk<void, void, any> = createAsyncThunk(
 
       productApi.getCategories()
         .then((res => {
-
             Promise.all(
               res.map((c) => productApi.getProductsByCategory(c, '?limit=4'))
             )
@@ -24,8 +23,7 @@ export const getAllProjects: AsyncThunk<void, void, any> = createAsyncThunk(
                         products: products[index].products,
                     }))
                   ));
-              }).catch((e) => {
-                console.log(e);
+              }).catch(() => {
             });
         }))
         .catch(e => {
@@ -41,14 +39,14 @@ export const getAllProjects: AsyncThunk<void, void, any> = createAsyncThunk(
   }
 );
 
-export const addWishList = createAsyncThunk(
+export const addWishList: AsyncThunk<void, string, void> = createAsyncThunk(
   'wishlist',
   async (ID: string, { dispatch }) => {
-       AsyncStorage.getItem('wishlist')
+      AsyncStorage.getItem('wishlist')
         .then((res: string | null): void => {
             let wishlistClone: string[] = [];
             if (res) {
-                 wishlistClone = [...JSON.parse(res)];
+                wishlistClone = [...JSON.parse(res)];
 
                 if (wishlistClone.includes(ID)) {
                     wishlistClone = wishlistClone.filter((wishlistId: string) => wishlistId !== ID);
@@ -74,12 +72,11 @@ export const addWishList = createAsyncThunk(
   }
 );
 
-export const updateWishList = createAsyncThunk(
+export const updateWishList: AsyncThunk<void, void, any> = createAsyncThunk(
   'wishlist',
   async (_, { dispatch }) => {
-      AsyncStorage.getItem('wishlist') .then((res: string | null): void => {
-          console.log(res);
-          if (res){
+      AsyncStorage.getItem('wishlist').then((res: string | null): void => {
+          if (res) {
               AsyncStorage.setItem('wishlist', res)
                 .then(() => {
                     dispatch(productActions.setWishList(JSON.parse(res)));
@@ -89,12 +86,34 @@ export const updateWishList = createAsyncThunk(
                 });
           }
 
-        })
+      })
         .catch(() => {
             // console.log(e);
         })
         .finally(() => {
 
+        });
+  }
+);
+
+
+export const getProductList: AsyncThunk<void, number, any> = createAsyncThunk(
+  'wishlist',
+  async (offset: number, { dispatch }) => {
+      dispatch(productActions.setLoading(true));
+      productApi.getALLProducts(offset)
+        .then((res) => {
+            dispatch(productActions.setAllProductsProducts(res.products));
+            dispatch(productActions.setCountInDB(res.total));
+        })
+        .catch((e) => {
+            Toast.show({
+                type: 'error',
+                text1: 'Something went wrong <Login> ' + e,
+            });
+        })
+        .finally(() => {
+            dispatch(productActions.setLoading(false));
         });
   }
 );

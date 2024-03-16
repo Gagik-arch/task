@@ -11,7 +11,7 @@ const Banner = ({}: BannerType): ReactElement => {
 
     useEffect(() => {
         const intervalId: ReturnType<typeof setInterval> = setInterval(() => {
-            selected.current = selected.current  > 1 ? 0 : selected.current  + 1;
+            selected.current = selected.current > 1 ? 0 : selected.current + 1;
             viewPager.current?.setPage(selected.current);
         }, 5000);
 
@@ -19,7 +19,6 @@ const Banner = ({}: BannerType): ReactElement => {
             clearInterval(intervalId);
         };
     }, []);
-
     return (
       <View style={styles.root}>
           <PagerView style={styles.pagerView}

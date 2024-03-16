@@ -15,7 +15,7 @@ const styles = StyleSheet.create<{
     backgroundColor: 'transparent',
     justifyContent: 'space-between',
     position: 'relative',
-    ...Edges.padding(16),
+    ...Edges.padding(10),
   },
   title_container: {
     flexDirection: 'row',
@@ -33,7 +33,7 @@ const styles = StyleSheet.create<{
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    flex: 1,
+   width:'auto',
   },
   back_btn: {
     flexDirection: 'row',
