@@ -1,4 +1,4 @@
-import  { ProductStore } from '@store/product';
+import  { ProductStore } from '../../state/product';
 
 export type CategoryContainerProps = {
     productStore:ProductStore

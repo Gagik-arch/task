@@ -1,17 +1,19 @@
 import React, { ReactElement, useLayoutEffect, useState } from 'react';
-import styles from './style';
 import Text from '@core/Text';
-import { observer } from 'mobx-react-lite';
-import { CategoryContainerProps, CategoryDataType } from '@containers/CategoriesContainer/types.ts';
+import {  CategoryDataType } from '@containers/CategoriesContainer/types.ts';
 import { TouchableOpacity, View } from 'react-native';
 import { imagesData } from './staticData';
-import { HomeProducts } from '@types';
+import { HomeProducts, ProductStore } from '@types';
 import Image from '../../core/Image';
 import { useNavigation } from '@react-navigation/native';
 import Routes from '@resources/routes.ts';
+import { useSelector } from 'react-redux';
 
-const CategoriesContainer = observer(({ productStore }: CategoryContainerProps): ReactElement => {
+const CategoriesContainer = (): ReactElement => {
     const navigation = useNavigation();
+    const productStore:ProductStore = useSelector((state:{
+        product:ProductStore
+    }) => state.product);
 
     const [categoryData, setCategoryData] =
       useState<CategoryDataType[]>([]);
@@ -20,21 +22,21 @@ const CategoriesContainer = observer(({ productStore }: CategoryContainerProps):
         setCategoryData(productStore.homeProducts.map((product: HomeProducts) => {
 
             return ({
-                name: product.category,
-                img: imagesData.hasOwnProperty(product.category) ? imagesData[product.category] : '',
+                name: product.name,
+                img: imagesData.hasOwnProperty(product.name) ? imagesData[product.name] : '',
             });
         }));
-    }, [productStore.homeProducts]);
+    }, [productStore]);
 
     return (
-      <View>
+      <View >
           {
               categoryData.map((category: CategoryDataType) => {
 
                   return (
                     <TouchableOpacity style={{ flexDirection: 'column' }}
                                       onPress={() => {
-                                          navigation.navigate(Routes.Category,{category:category.name});
+                                          navigation.navigate(Routes.Category, { category: category.name });
                                       }} key={category.name}>
                         <Text size={'18_600'}>{category.name}</Text>
                         <Image uri={category.img} />
@@ -43,8 +45,7 @@ const CategoriesContainer = observer(({ productStore }: CategoryContainerProps):
               })
           }
       </View>
-
     );
-});
+};
 
 export default CategoriesContainer;

@@ -2,11 +2,16 @@ import { StyleSheet, type TextStyle, type ViewStyle } from 'react-native';
 import Edges from '@resources/edges';
 
 const styles = StyleSheet.create<{ [key: string]: ViewStyle | TextStyle }>({
-    root: {
-        ...Edges.padding(12),
+    card: {
+        flex: 0.48,
+        borderRadius: 6,
+        backgroundColor: 'rgb(194,144,255)',
+        overflow: 'hidden',
     },
-    cards: {
-        ...Edges.margin(10, 0),
+    wash_list_btn:{
+        position:'absolute',
+        right:10,
+        top:10,
     },
 });
 

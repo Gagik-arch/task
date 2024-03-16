@@ -43,6 +43,17 @@ export type Product = {
 }
 
 export type HomeProducts = {
-    category :string
+    name: string
     products: Product[];
+}
+
+export type ProductStore = {
+    isLoading: boolean
+    wishList: string[]
+    homeProducts: HomeProducts[]
+}
+
+export type UserStore = {
+    isLoading: boolean
+    data: null | User
 }

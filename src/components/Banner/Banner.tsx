@@ -19,6 +19,7 @@ const Banner = ({}: BannerType): ReactElement => {
             clearInterval(intervalId);
         };
     }, []);
+
     return (
       <View style={styles.root}>
           <PagerView style={styles.pagerView}

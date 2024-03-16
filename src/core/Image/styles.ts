@@ -15,6 +15,7 @@ const styles = StyleSheet.create<{
       'relative',
     justifyContent:'center',
     alignItems:'center',
+    flexDirection:'column',
   },
   loader:{
     position:'absolute',

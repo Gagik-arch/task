@@ -1,77 +1,86 @@
 import { ReactElement, useEffect } from 'react';
-import { observer } from 'mobx-react-lite';
-import { ProductStore } from '@store/product';
-import { ActivityIndicator, FlatList,  View } from 'react-native';
+import { FlatList, View, ActivityIndicator,Dimensions } from 'react-native';
 import Text from '@core/Text';
 import styles from './styles';
-import { Product } from '@types';
-import Edges from '@resources/edges';
-import Image from '@core/Image';
+import { HomeProducts, Product, ProductStore } from '@types';
 import Button from '../../core/Button';
 import Colors from '@resources/colors.ts';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import Routes from '@resources/routes.ts';
+import ProductCard from '@components/ProductCard';
+import Edges from '@resources/edges.ts';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '../../store/';
+import { addWishList, getAllProjects } from '../../store/asyncThunks/products.ts';
 
-const HomeContaner = observer(({ productStore }: { productStore: ProductStore }): ReactElement => {
-const navigation = useNavigation();
-const route = useRoute();
+const {height } = Dimensions.get('screen');
+const HomeContaner = (): ReactElement => {
+    const navigation = useNavigation();
+    const productStore = useSelector((state: { product: ProductStore }) => state.product);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
-        productStore.getCategories();
+        dispatch(getAllProjects());
     }, []);
 
-    if (productStore.isLoading){
+    if (productStore.isLoading) {
         return (
-          <ActivityIndicator color={Colors.purple}/>
+          <ActivityIndicator color={Colors.purple} />
         );
     }
     return (
       <View style={styles.root}>
-          {
-              productStore.homeProducts.map(product => {
-                  const cartegoryHeader: string = (product.category[0].toUpperCase() + product.category.slice(1)).replaceAll('-', ' ');
-                  return (
-                    <View key={product.category}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text size={'18_600'}>{cartegoryHeader}</Text>
-                            <Button textStyle={{ color: 'blue' }}
-                                    label={'See all'}
-                                    onPress={() => {
-                                        navigation.navigate(Routes.Category,{category:product.category});
+          <FlatList
+            style={{height:height - 300}}
+            data={productStore.homeProducts}
+            nestedScrollEnabled={true}
+            renderItem={({ item: category }: { item: HomeProducts }) => {
+                const cartegoryHeader: string = (category.name[0].toUpperCase() + category.name.slice(1)).replaceAll('-', ' ');
+
+                return (
+                  <View key={category.name}>
+                      <View style={{
+                          flexDirection: 'row',
+                          justifyContent: 'space-between',
+                          alignItems: 'center', ...Edges.margin(10, 0),
+                      }}>
+                          <Text size={'24_600'}>{cartegoryHeader}</Text>
+                          <Button textStyle={{ color: Colors.lightGray }}
+                                  label={'See all'}
+                                  onPress={() => {
+                                      navigation.navigate(Routes.Category, { category: category.name });
+                                  }} />
+                      </View>
+                      <View style={styles.cards}>
+                          <FlatList
+                            data={category.products}
+                            numColumns={2}
+                            contentContainerStyle={{ columnGap: 20 }}
+                            scrollEnabled={false}
+                            renderItem={({ item }: { item: Product }) => {
+                                return (
+                                  <ProductCard
+                                    product={item}
+                                    isInWishList={productStore.wishList.includes(`${item.category}/${item.id}`)}
+                                    onPressHeart={() => {
+                                        dispatch(addWishList(`${item.category}/${item.id}`));
                                     }} />
-                        </View>
-                        <View style={styles.cards}>
-                            <FlatList
-                              data={product.products}
-                              numColumns={2}
-                              nestedScrollEnabled={true}
-                              contentContainerStyle={{ columnGap: 20 }}
-                              scrollEnabled={false}
-                              renderItem={({ item }: { item: Product }) => {
-                                  return (
-                                    <View style={styles.card}>
-                                        <Image uri={item.thumbnail}
-                                               style={{
-                                                   width: '100%',
-                                                   height: 100,
-                                               }} />
-                                        <Text size={'16_600'} style={{ ...Edges.padding(8) }}>{item.brand}</Text>
-                                    </View>
-                                  );
-                              }}
-                              ItemSeparatorComponent={() => <View style={{ height: 20 }} />}
-                              columnWrapperStyle={{
-                                  justifyContent: 'space-between',
-                              }}
-                              keyExtractor={(item:Product) => item.id}
-                            />
-                        </View>
-                    </View>
-                  );
-              })
-          }
+                                );
+                            }}
+                            ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
+                            columnWrapperStyle={{
+                                justifyContent: 'space-between',
+                            }}
+                            keyExtractor={(item: Product) => `${item.category}/${item.id}`}
+                          />
+                      </View>
+                  </View>
+                );
+            }}
+            keyExtractor={(item: HomeProducts) => item.name}
+          />
       </View>
     );
-});
+};
 
 export default HomeContaner;

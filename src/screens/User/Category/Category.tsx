@@ -7,15 +7,16 @@ import Edges from '@resources/edges';
 import CategoryContainer from '@containers/CategoryContaner';
 
 const Category = (): ReactElement => {
-const route = useRoute();
+    const route = useRoute();
 
     return (
       <Screen header={<NavigationHeader backHandler={true}
-                                        title={<Text numberOfLines={1} size={'20_600'}>{(route.params.category )[0].toUpperCase() + route.params.category.slice(1)}</Text>}
+                                        title={<Text numberOfLines={1}
+                                                     size={'20_600'}>{(route.params.category)[0].toUpperCase() + route.params.category.slice(1)}</Text>}
       />}
               contentContainerStyle={{ ...Edges.padding(12) }}
       >
-          <CategoryContainer/>
+          <CategoryContainer />
       </Screen>
     );
 };

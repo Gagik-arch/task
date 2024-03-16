@@ -1,4 +1,4 @@
-import { UserStore } from '@store/user';
+import { UserStore } from '../../../state/user';
 
 export type MyProfileProps = {
     userStore:UserStore

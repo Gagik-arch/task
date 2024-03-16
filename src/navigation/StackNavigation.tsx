@@ -15,19 +15,18 @@ import NetInfo, {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Routes from '@resources/routes.ts';
 import TabNavigation from './TabNavigation';
-import { UserStore } from '@store/user';
-import { observer } from 'mobx-react-lite';
 import Category from '@screens/User/Category';
+import { useAppDispatch } from '../store';
+import { addWishList, getAllProjects, updateWishList } from '../store/asyncThunks/products';
 
 const Stack = createNativeStackNavigator();
 
-const StackNavigator = observer((
-  { userStore }: { userStore: UserStore }
-): ReactElement => {
+const StackNavigator = (): ReactElement => {
     const navigation = useNavigation();
     const [isConnected, setIsConnected] = useState<boolean | undefined>(
       undefined
     );
+    const dispatch = useAppDispatch();
 
     useLayoutEffect(() => {
         const unsubscribe: NetInfoSubscription = NetInfo.addEventListener(
@@ -42,24 +41,20 @@ const StackNavigator = observer((
 
     useEffect(() => {
         if (isConnected) {
+            dispatch(updateWishList());
             AsyncStorage.getItem('token')
               .then((token: string | null): void => {
                   if (token) {
-                      userStore.updateUser( () => {
-                          navigation.reset({
-                              index: 0,
-                              routes: [{ name: Routes.Tabs }],
-                          });
-                      });
+                      dispatch(getAllProjects());
                   } else {
                       navigation.reset({
                           index: 0,
-                          routes: [{ name: Routes.Login }],
+                          routes: [{ name: Routes.Tabs }],
                       });
                   }
               })
               .catch(() => {
-                  navigation.reset({ index: 0, routes: [{ name: Routes.Login }] });
+                  navigation.reset({ index: 0, routes: [{ name: Routes.Tabs }] });
               });
         } else if (isConnected !== undefined) {
             navigation.reset({ index: 0, routes: [{ name: Routes.NoNetwork }] });
@@ -67,8 +62,13 @@ const StackNavigator = observer((
     }, [isConnected, navigation]);
 
     return (
-      <Stack.Navigator initialRouteName={Routes.Login}>
+      <Stack.Navigator initialRouteName={Routes.Tabs}>
           <Stack.Group>
+              <Stack.Screen
+                name={Routes.Tabs}
+                component={TabNavigation}
+                options={{ header: () => null }}
+              />
               <Stack.Screen
                 name={Routes.Login}
                 component={Login}
@@ -80,11 +80,6 @@ const StackNavigator = observer((
                 options={{ header: () => null }}
               />
               <Stack.Screen
-                name={Routes.Tabs}
-                component={TabNavigation}
-                options={{ header: () => null }}
-              />
-              <Stack.Screen
                 name={Routes.Category}
                 component={Category}
                 options={{ header: () => null }}
@@ -92,6 +87,6 @@ const StackNavigator = observer((
           </Stack.Group>
       </Stack.Navigator>
     );
-});
+};
 
 export default StackNavigator;
