@@ -4,7 +4,6 @@ import { ActivityIndicator, FlatList, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { HomeProducts, Product, ProductStore } from '@types';
 import ProductCard from '@components/ProductCard';
-import { productActions } from '../../store/reducers';
 import Text from '@core/Text';
 import { addWishList } from '../../store/asyncThunks/products.ts';
 
@@ -12,7 +11,7 @@ const WishlistContainer = (): ReactElement => {
     const navigation = useNavigation();
     const productStore = useSelector((state: { product: ProductStore }) => state.product);
     const dispatch = useDispatch();
-    if (productStore.isLoading) {
+    if (productStore.isLoadingWishlist) {
         return <ActivityIndicator />;
     }
 

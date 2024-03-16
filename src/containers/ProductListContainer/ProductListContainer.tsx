@@ -31,7 +31,7 @@ const ProductListContainer = ({ searchValue }: ProductListContainerProps): React
             scrollEnabled={false}
             onEndReachedThreshold={0.5}
             onEndReached={() => {
-                setOffSet(offset + 30);
+                setOffSet(offset + 25);
             }}
             renderItem={({ item }: { item: Product }) => {
                 return (

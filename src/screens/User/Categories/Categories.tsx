@@ -1,5 +1,4 @@
 import { ReactElement } from 'react';
-
 import Screen from '@core/Screen';
 import CategoriesContainer from '@containers/CategoriesContainer';
 import NavigationHeader from '@core/NavigationHeader';

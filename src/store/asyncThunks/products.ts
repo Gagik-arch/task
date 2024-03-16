@@ -53,7 +53,6 @@ export const addWishList: AsyncThunk<void, string, void> = createAsyncThunk(
                 } else {
                     wishlistClone.push(ID);
                 }
-
             }
             AsyncStorage.setItem('wishlist', JSON.stringify(wishlistClone))
               .then(() => {
@@ -67,7 +66,6 @@ export const addWishList: AsyncThunk<void, string, void> = createAsyncThunk(
             // console.log(e);
         })
         .finally(() => {
-
         });
   }
 );
@@ -85,22 +83,19 @@ export const updateWishList: AsyncThunk<void, void, any> = createAsyncThunk(
 
                 });
           }
-
       })
         .catch(() => {
             // console.log(e);
         })
         .finally(() => {
-
         });
   }
 );
 
-
 export const getProductList: AsyncThunk<void, number, any> = createAsyncThunk(
   'wishlist',
   async (offset: number, { dispatch }) => {
-      dispatch(productActions.setLoading(true));
+      dispatch(productActions.setLoadingWishList(true));
       productApi.getALLProducts(offset)
         .then((res) => {
             dispatch(productActions.setAllProductsProducts(res.products));
@@ -113,7 +108,7 @@ export const getProductList: AsyncThunk<void, number, any> = createAsyncThunk(
             });
         })
         .finally(() => {
-            dispatch(productActions.setLoading(false));
+            dispatch(productActions.setLoadingWishList(false));
         });
   }
 );

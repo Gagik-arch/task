@@ -29,7 +29,7 @@ class ProductApi extends Api {
       skip: number
       limit: number
       products:Product[]
-    }>({url:`?limit=30&skip=${offset}`});
+    }>({url:`?limit=25&skip=${offset}`});
   }
 }
 

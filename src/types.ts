@@ -50,6 +50,7 @@ export type HomeProducts = {
 
 export type ProductStore = {
     isLoading: boolean
+    isLoadingWishlist: boolean
     wishList: string[]
     homeProducts: HomeProducts[]
     allProducts:Product[]

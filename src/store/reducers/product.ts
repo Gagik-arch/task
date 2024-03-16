@@ -3,6 +3,7 @@ import { HomeProducts, ProductStore } from '@types';
 
 const initialState: ProductStore = {
     isLoading: false,
+    isLoadingWishlist: false,
     wishList: [],
     homeProducts: [],
     allProducts:[],
@@ -21,6 +22,9 @@ export const productSlice = createSlice({
         },
         setLoading(state, action) {
             state.isLoading = action.payload;
+        },
+        setLoadingWishList(state, action) {
+            state.isLoadingWishlist = action.payload;
         },
         setAllProductsProducts(state, action) {
             state.allProducts = [...state.allProducts,...action.payload];

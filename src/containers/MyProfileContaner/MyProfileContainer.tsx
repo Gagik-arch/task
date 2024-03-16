@@ -8,7 +8,6 @@ import Routes from '@resources/routes.ts';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserStore } from '@types';
 import { logout } from '../../store/asyncThunks/user.ts';
-import Input from '@core/Input';
 
 const MyProfileContainer = (): ReactElement => {
     const navigation = useNavigation();
